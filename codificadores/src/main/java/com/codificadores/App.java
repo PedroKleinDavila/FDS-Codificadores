@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Codificador cod;
 
-        cod = CodificadorFactory.createCodificador(TipoCodificador.SIMPLES);
+        cod = CodificadorFactory.createCodificador(TipoCodificador.VIGENERE);
 
         System.out.println("Codificador: " + cod.getNome());
         System.out.println("Versao: " + cod.getDataCriacao());

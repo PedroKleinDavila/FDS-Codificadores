@@ -10,6 +10,8 @@ public class CodificadorFactory {
         switch (tipo) {
             case TipoCodificador.SIMPLES:
                 return new CodificadorSimples();
+            case TipoCodificador.VIGENERE:
+                return new CodificadorVigenere("islandia");
             default:
                 throw new IllegalArgumentException("Tipo de codificador desconhecido: " + tipo);
         }
