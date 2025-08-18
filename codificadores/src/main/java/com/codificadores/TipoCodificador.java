@@ -2,5 +2,6 @@ package com.codificadores;
 
 public enum TipoCodificador {
     SIMPLES,
-    VIGENERE
+    VIGENERE,
+    DESLOCAMENTO
 }
