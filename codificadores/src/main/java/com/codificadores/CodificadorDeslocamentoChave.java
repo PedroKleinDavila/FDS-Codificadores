@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public class CodificadorDeslocamentoChave implements Codificador {
 
     private final int deslocamento;
-    private final LocalDate dataCriacao = LocalDate.now();
 
     public CodificadorDeslocamentoChave(int deslocamento) {
         this.deslocamento = deslocamento;
@@ -18,7 +17,7 @@ public class CodificadorDeslocamentoChave implements Codificador {
 
     @Override
     public LocalDate getDataCriacao() {
-        return dataCriacao;
+        return LocalDate.of(2025, 3, 17);
     }
 
     @Override
