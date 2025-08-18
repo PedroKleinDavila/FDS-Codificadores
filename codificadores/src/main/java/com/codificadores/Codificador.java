@@ -3,6 +3,7 @@ package com.codificadores;
 import java.time.LocalDate;
 
 public interface Codificador {
+
     // Retorna o nome do codificador
     public String getNome();
 
