@@ -22,7 +22,7 @@ public class CodificadorDeslocamentoChave implements Codificador {
 
     @Override
     public int getNivelSeguranca() {
-        return 5;
+        return 1;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class CodificadorDeslocamentoChave implements Codificador {
         }
         StringBuilder sb = new StringBuilder(str.length());
         for (char c : str.toCharArray()) {
-            sb.append((char) (c + deslocamento)); // desloca pelo valor da chave
+            sb.append((char) (c + deslocamento));
         }
         return sb.toString();
     }
@@ -44,7 +44,7 @@ public class CodificadorDeslocamentoChave implements Codificador {
         }
         StringBuilder sb = new StringBuilder(str.length());
         for (char c : str.toCharArray()) {
-            sb.append((char) (c - deslocamento)); // volta deslocamento
+            sb.append((char) (c - deslocamento));
         }
         return sb.toString();
     }

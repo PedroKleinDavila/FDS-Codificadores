@@ -7,8 +7,6 @@
  * Chave = P(15), I(8), L(11), H(7), A(0), P(15), I(8)
  * Mensagem cifrada= EWWPCXI
  */
-
-
 package com.codificadores;
 
 import java.time.LocalDate;
@@ -33,7 +31,7 @@ public class CodificadorVigenere implements Codificador {
 
     @Override
     public int getNivelSeguranca() {
-        return 3; 
+        return 1;
     }
 
     @Override
@@ -50,7 +48,7 @@ public class CodificadorVigenere implements Codificador {
                 resultado.append(cifrado);
                 chaveIndex++;
             } else {
-                resultado.append(c); 
+                resultado.append(c);
             }
         }
         return resultado.toString();
