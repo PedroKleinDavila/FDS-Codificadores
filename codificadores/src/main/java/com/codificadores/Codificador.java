@@ -1,20 +1,46 @@
+import java.time.LocalDate;
 package com.codificadores;
 
-import java.time.LocalDate;
+public class CodificadorDeslocamentoChave implements Codificador {
+private final int deslocamento;
+private final LocalDate dataCriacao = LocalDate.now();
 
-public interface Codificador {
-    // Retorna o nome do codificador
-    public String getNome();
+public CodificadorDeslocamentoChave(int deslocamento) {
+this.deslocamento = deslocamento;
+}
 
-    // Retorna a data de imlementação do codificador (pode ser usado como versao)
-    public LocalDate getDataCriacao();
+@Override
+public String getNome() {
+return "Deslocamento com chave numérica (" + deslocamento + ")";
+}
 
-    // Retorna o nivel de segurança do codificador (1 = muito baixo, 100 = muito alto)
-    public int getNivelSeguranca();
+@Override
+public LocalDate getDataCriacao() {
+return dataCriacao;
+}
 
-    // Recebe um string e retorna o correspondente codificado
-    public String codifica(String str);
+@Override
+public int getNivelSeguranca() {
+return 5;
+}
 
-    // Recebe um string codificado e retorna o correspondente decodificado
-    public String decodifica(String str);
+@Override
+public String codifica(String str) {
+if (str == null) return null;
+StringBuilder sb = new StringBuilder(str.length());
+for (char c : str.toCharArray()) {
+sb.append((char) (c + deslocamento)); // desloca pelo valor da chave
+}
+return sb.toString();
+}
+
+@Override
+public String decodifica(String str) {
+if (str == null) return null;
+StringBuilder sb = new StringBuilder(str.length());
+for (char c : str.toCharArray()) {
+sb.append((char) (c - deslocamento)); // volta deslocamento
+}
+return sb.toString();
+}
 }
