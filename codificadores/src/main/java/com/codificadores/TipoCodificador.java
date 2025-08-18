@@ -3,5 +3,6 @@ package com.codificadores;
 public enum TipoCodificador {
     SIMPLES,
     VIGENERE,
-    DESLOCAMENTO
+    DESLOCAMENTO,
+    BASE64
 }
